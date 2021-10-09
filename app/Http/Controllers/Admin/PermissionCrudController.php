@@ -17,7 +17,7 @@ class PermissionCrudController extends CrudController
     public function setup()
     {
 
-            if(backpack_user()->hasRole('Admin')) {
+//            if(backpack_user()->hasRole('Admin')) {
 
 
                 $this->role_model = $role_model = config('backpack.permissionmanager.models.role');
@@ -37,9 +37,9 @@ class PermissionCrudController extends CrudController
                 if (config('backpack.permissionmanager.allow_permission_delete') == false) {
                     $this->crud->denyAccess('delete');
                 }
-            }else{
-                $this->crud->denyAccess('list');
-            }
+//            }else{
+//                $this->crud->denyAccess('list');
+//            }
     }
 
     public function setupListOperation()
